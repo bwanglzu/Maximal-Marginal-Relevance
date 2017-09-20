@@ -66,7 +66,7 @@ def main(initial_ranking, lambda_score):
 		mmr_score, doc = mmr(
 			lambda_score,
 			d,
-			docs_unranked,
+			docss_unranked,
 			final_ranking,
 			initial_ranking,
 			sim_matrix)
@@ -75,8 +75,3 @@ def main(initial_ranking, lambda_score):
 		docs_unranked.remove(doc)
 		docs_unranked.append(d)
 	return final_ranking
-
-if __name__ == '__main__':
-	OUT_PATH = '/Users/wbcha/Downloads/out_textual/accordion_player.csv'
-	initial_ranking = pd.read_csv(OUT_PATH)
-	print main(initial_ranking, 0.5)
