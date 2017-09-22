@@ -6,15 +6,18 @@ MMR for information retrieval.
 
 ```
 git clone project
-pip install -r requirements.txt
+python setup.py install
 ```
 
 #### Usage
 
 ```python
+import pandas as pd
+from mmr import mmr
+
 lambda_score = 0.5
 initial_ranking = pd.read_csv('../example/example.csv')
-print main(initial_ranking, lambda_score)
+print mmr.rank(initial_ranking, lambda_score)
 ```
 
 
